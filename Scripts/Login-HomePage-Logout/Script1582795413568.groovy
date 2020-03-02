@@ -38,6 +38,6 @@ WebUI.click(findTestObject('Object Repository/Login-Logout/a_Superdmin'))
 
 WebUI.click(findTestObject('Object Repository/Login-Logout/a_Sign Out'))
 
-//WebUI.takeScreenshot()
+WebUI.takeScreenshot()
 
 WebUI.closeBrowser()
