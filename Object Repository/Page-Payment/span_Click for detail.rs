@@ -6,16 +6,16 @@
    <elementGuidId>06f2d465-9078-4e6a-83d6-00af6291c073</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>(.//*[normalize-space(text()) and normalize-space(.)='Rp. 218,161'])[1]/following::span[1]</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value></value>
       </entry>
       <entry>
          <key>BASIC</key>
          <value>//*[(text() = ' Click for detail' or . = ' Click for detail')]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(.//*[normalize-space(text()) and normalize-space(.)='Rp. 218,161'])[1]/following::span[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>
