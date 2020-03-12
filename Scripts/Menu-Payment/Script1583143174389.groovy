@@ -24,6 +24,8 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.testobject.RestRequestObjectBuilder
 import com.kms.katalon.core.testobject.TestObjectProperty
 import com.kms.katalon.core.testobject.impl.HttpTextBodyContent
+import com.kms.katalon.core.util.KeywordUtil
+
 import groovy.json.JsonSlurper
 import groovy.util.logging.Log
 
@@ -31,6 +33,8 @@ import org.json.JSONException
 import org.json.JSONObject
 import groovy.json.JsonBuilder
 import groovy.json.JsonParser
+import com.kms.katalon.core.exception.StepErrorException as StepErrorException
+
 
 
 
@@ -58,9 +62,7 @@ public class SampleRequestObject {
 	
 	   String endpoint = "http://innodev.vnetcloud.com/liveinpaymentMeikarta/paymenthistory"
 	   String requestMethod = "POST"
-//	   String authHeader = "whateverYouNeedForAuthentication"
-		
-//	   TestObjectProperty header1 = new TestObjectProperty("Authorization", ConditionType.EQUALS, authHeader)
+
 	   TestObjectProperty header2 = new TestObjectProperty("Content-Type", ConditionType.EQUALS, "application/json")
 	   TestObjectProperty header3 = new TestObjectProperty("Accept", ConditionType.EQUALS, "application/json, text/plain, */*")
 	   ArrayList defaultHeaders = Arrays.asList(header2, header3)
@@ -68,7 +70,7 @@ public class SampleRequestObject {
 ////	   Jika tidak segaris, tambahkan tanda "\"
 	   String body = '{\
 			"orgid": "1",\
-			"email": "wahyuzulkarnaen.dev@gmail.com",\
+			"email": "wahyu_zulkarnaen@gmail.com",\
 			"payment_method": "",\
 			"start_number_of_unit": "",\
 			"end_number_of_unit": "",\
@@ -112,12 +114,13 @@ ResponseObject response = sro.buildPostApiRequest1()
 println(response.getResponseText())
 
 
-responseText = response.getResponseText();
+responseText = response.getResponseText()
 Object json = new JsonSlurper().parseText(responseText)
 //println ("Jumlah data = "+json.data.size())
 
 
-int dataLength = json.data.size()
+int dataLength = 0
+dataLength = json.data.size()
 try {
 	JSONObject jsonObject = new JSONObject(response)
 	
@@ -125,10 +128,9 @@ try {
 }
 catch (JSONException err){
 	println("Error! "+ err.toString())
+//	assert WebUI.waitForElementVisible(err, 5, FailureHandling.STOP_ON_FAILURE)
 }
 println ("Jumlah Data = " + dataLength)
-
-
 
 
 
@@ -136,7 +138,17 @@ println ("Jumlah Data = " + dataLength)
 TestObject to = findTestObject('Object Repository/Page-Payment/span_Click for detail')
 
 'fungsi random nya'
-int randomInt = new Random().nextInt(dataLength - 1 + 1) + 1
+int randomInt
+if (dataLength > 0){
+	 randomInt = new Random().nextInt(dataLength - 1 + 1) + 1
+} else {
+	KeywordUtil.markPassed().equals(null)
+	WebUI.closeBrowser()
+	return
+//	throw new StepErrorException("FORCEDSTOP")
+}
+
+
 
 'Change value of CSS selector'
 to.setSelectorValue(SelectorMethod.CSS, 'body > div > app-root > app-admin-payment > div.container > div:nth-child(2) > div:nth-child('+randomInt+') > div > div > p:nth-child(3) > small > span')
@@ -145,11 +157,9 @@ WebUI.click(to)
 
 
 
-
 WebUI.takeScreenshot()
 
 WebUI.delay(5)
-
 
 
 

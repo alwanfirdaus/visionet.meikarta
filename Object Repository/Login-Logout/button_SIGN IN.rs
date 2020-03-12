@@ -7,7 +7,11 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>(.//*[normalize-space(text()) and normalize-space(.)='Meikarta'])[2]/following::button[1]</value>
+         <value>(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::button[1]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[(text() = ' SIGN IN' or . = ' SIGN IN')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -38,21 +42,21 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html[1]/body[1]/div[@class=&quot;arataka-main-container&quot;]/app-root[1]/app-auth-signin[1]/div[@class=&quot;form-signin&quot;]/div[@class=&quot;form-group&quot;]/button[@class=&quot;btn arataka-btn-login btn-block&quot;]</value>
+      <value>/html[1]/body[1]/div[@class=&quot;arataka-main-container&quot;]/app-root[1]/app-auth-signin[1]/div[@class=&quot;container&quot;]/div[@class=&quot;row&quot;]/div[@class=&quot;col-sm-4 offset-sm-4 mt-5&quot;]/div[@class=&quot;card mb-2 SignInCard&quot;]/div[@class=&quot;card-body&quot;]/div[@class=&quot;form-group mt-2&quot;]/button[@class=&quot;btn arataka-btn-login btn-block&quot;]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Meikarta'])[2]/following::button[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::button[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='PT Visionet Data Internasional © 2019'])[1]/preceding::button[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::button[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>

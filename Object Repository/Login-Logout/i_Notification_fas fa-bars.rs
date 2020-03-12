@@ -6,12 +6,12 @@
    <elementGuidId>d2ffed99-d19a-443a-b4bb-d3e779ae612a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>/html[1]/body[1]/div[@class=&quot;arataka-main-container&quot;]/app-root[1]/app-nav-top-menu[1]/nav[@class=&quot;navbar navbar-expand-sm navbar-dark arataka-bg-primary&quot;]/div[@class=&quot;container&quot;]/span[@class=&quot;navbar-text&quot;]/a[@class=&quot;artaka-open-sidebar&quot;]/i[@class=&quot;fas fa-bars&quot;][count(. | //*[@class = 'fas fa-bars']) = count(//*[@class = 'fas fa-bars'])]</value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//a/i</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>/html[1]/body[1]/div[@class=&quot;arataka-main-container&quot;]/app-root[1]/app-nav-top-menu[1]/nav[@class=&quot;navbar navbar-expand-sm navbar-light arataka-bg-primary&quot;]/div[@class=&quot;container&quot;]/span[@class=&quot;navbar-text&quot;]/a[@class=&quot;artaka-open-sidebar&quot;]/i[@class=&quot;fas fa-bars&quot;][count(. | //*[@class = 'fas fa-bars']) = count(//*[@class = 'fas fa-bars'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -35,7 +35,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html[1]/body[1]/div[@class=&quot;arataka-main-container&quot;]/app-root[1]/app-nav-top-menu[1]/nav[@class=&quot;navbar navbar-expand-sm navbar-dark arataka-bg-primary&quot;]/div[@class=&quot;container&quot;]/span[@class=&quot;navbar-text&quot;]/a[@class=&quot;artaka-open-sidebar&quot;]/i[@class=&quot;fas fa-bars&quot;]</value>
+      <value>/html[1]/body[1]/div[@class=&quot;arataka-main-container&quot;]/app-root[1]/app-nav-top-menu[1]/nav[@class=&quot;navbar navbar-expand-sm navbar-light arataka-bg-primary&quot;]/div[@class=&quot;container&quot;]/span[@class=&quot;navbar-text&quot;]/a[@class=&quot;artaka-open-sidebar&quot;]/i[@class=&quot;fas fa-bars&quot;]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

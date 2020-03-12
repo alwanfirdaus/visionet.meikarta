@@ -9,6 +9,10 @@
          <key>XPATH</key>
          <value>//div[@id='arataka-sidebar']/div/div[4]/div/div/p</value>
       </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[(text() = '  Payment' or . = '  Payment')]</value>
+      </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
